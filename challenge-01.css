@@ -1,0 +1,26 @@
+#container-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  background-color: antiquewhite;
+}
+
+#container-grid > div {
+  border: 1px solid red;
+}
+
+/* Div Left */
+#container-grid > div:nth-child(1) {
+  display: flex;
+  gap: 10px;
+}
+
+#container-grid > div:nth-child(2) {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+}
+
+#container-flex{
+    display: flex;
+    gap: 10px
+}
