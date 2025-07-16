@@ -1,0 +1,11 @@
+p {
+  font-size: 50px;
+  color: aquamarine;
+}
+
+#welcome-section {
+  background: url('https://res.cloudinary.com/dk0z4ums3/image/upload/v1661753020/attached_image/inilah-cara-merawat-anak-kucing-yang-tepat.jpg');
+  height: 500px;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
