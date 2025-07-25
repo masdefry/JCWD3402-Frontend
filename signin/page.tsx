@@ -47,7 +47,7 @@ export default function Page() {
             value={formik.values.password}
           />
           {formik.errors.password && formik.touched. password && (
-            <div id='feedback'>{formik.errorspassword}</div>
+            <div id='feedback'>{formik.errors.password}</div>
           )}
         </fieldset>
         <button
