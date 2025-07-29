@@ -3,14 +3,14 @@ import Backendless from '@/lib/backendlessInit';
 
 export async function POST(req: NextRequest) {
   try {
-    const user = await req.json();
+    const { email, password } = await req.json();
 
-    await Backendless.UserService.register(user);
-
+    const res = await Backendless.UserService.login(email, password);
+    
     return NextResponse.json({
-      success: true,
-      message: 'Register user successfully',
-    });
+        message: 'Login user successfull', 
+        data: res
+    })
   } catch (error) {
     const err = error as { status?: number; message?: string };
 

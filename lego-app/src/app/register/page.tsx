@@ -6,7 +6,9 @@ import { SlBag } from 'react-icons/sl';
 import { FaRegHeart } from 'react-icons/fa6';
 import { useFormik } from 'formik';
 import { validationRegisterSchema } from '@/features/register/schemas/validationRegisterSchema';
-import axios from 'axios';
+import axios, { AxiosError } from 'axios';
+import { toast } from 'react-toastify';
+
 export default function Page() {
   const onHandleRegister = async ({
     email,
@@ -20,10 +22,10 @@ export default function Page() {
         email,
         password,
       });
-
-      console.log(res);
+      toast.success(res?.data?.message);
     } catch (error) {
-      console.log(error);
+      const err = error as AxiosError<{ message: string }>;
+      toast.error(err?.response?.data?.message);
     }
   };
 
