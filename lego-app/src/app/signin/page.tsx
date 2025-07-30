@@ -25,8 +25,11 @@ export default function Page() {
           password,
         }
       );
-      
-      setAuthLogin();
+
+      setAuthLogin({
+        email: res?.data?.data?.email,
+        objectId: res?.data?.data?.objectId,
+      });
       toast.success(res?.data?.message);
       router.replace('/');
     } catch (error) {
